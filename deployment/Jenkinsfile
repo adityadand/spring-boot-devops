@@ -1,10 +1,14 @@
 node {
-
 def mvnHome
 
+stage('Prepare') {
 
 git url: 'git@github.com:adityadand/spring-boot-devops.git', branch: 'master'
 
+
+mvnHome = tool 'mvn'
+
+}
 
 stage('Build') {
 
