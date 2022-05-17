@@ -2,14 +2,9 @@ node {
 
 def mvnHome
 
-stage('Prepare') {
-<<<<<<< HEAD
 
-git url: 'git@github.com:adityadand/spring-demo-webservices-ci-cd.git', branch: 'develop'
+git url: 'git@github.com:adityadand/spring-boot-devops.git', branch: 'master'
 
-=======
-git url: 'git@github.com:adityadand/spring-demo-webservices-ci-cd.git', branch: 'develop'
->>>>>>> da30b8a804cf83015207c8798307f2f3f297556f
 
 mvnHome = tool 'mvn'
 
