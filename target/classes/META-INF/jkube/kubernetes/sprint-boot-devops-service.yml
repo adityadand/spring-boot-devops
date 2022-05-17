@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    jkube.io/git-url: https://github.com/adityadand/spring-boot-devops.git
+    jkube.io/git-commit: d8e7a6b7a84bb973c176570a82aad8a14573e546
+    jkube.io/git-branch: master
+    jkube.io/scm-url: git@github.com:adityadand/spring-demo-webservices-ci-cd.git
+    jkube.io/scm-tag: v0.0.2
+    prometheus.io/path: /metrics
+    prometheus.io/port: "9779"
+    prometheus.io/scrape: "true"
+  labels:
+    app: sprint-boot-devops
+    provider: jkube
+    version: 0.0.2-SNAPSHOT
+    group: sprint-boot-devops
+  name: sprint-boot-devops
+spec:
+  ports:
+  - name: arcp
+    nodePort: 31371
+    port: 7070
+    protocol: TCP
+  selector:
+    app: sprint-boot-devops
+    provider: jkube
+    group: sprint-boot-devops
+  type: NodePort
