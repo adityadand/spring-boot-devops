@@ -7,17 +7,17 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/adityadand/spring-boot-devops.git
-      jkube.io/git-commit: d8e7a6b7a84bb973c176570a82aad8a14573e546
+      jkube.io/git-commit: 3f471c27047b5b5ec6d20086693a65b3eb61e37b
       jkube.io/git-branch: master
-      jkube.io/scm-url: git@github.com:adityadand/spring-demo-webservices-ci-cd.git
-      jkube.io/scm-tag: v0.0.2
+      jkube.io/scm-url: git@github.com:adityadand/spring-boot-devops.git
+      jkube.io/scm-tag: v0.0.3
       prometheus.io/path: /metrics
       prometheus.io/port: "9779"
       prometheus.io/scrape: "true"
     labels:
       app: sprint-boot-devops
       provider: jkube
-      version: 0.0.2-SNAPSHOT
+      version: 0.0.3-SNAPSHOT
       group: sprint-boot-devops
     name: sprint-boot-devops
   spec:
@@ -36,14 +36,14 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/adityadand/spring-boot-devops.git
-      jkube.io/git-commit: d8e7a6b7a84bb973c176570a82aad8a14573e546
+      jkube.io/git-commit: 3f471c27047b5b5ec6d20086693a65b3eb61e37b
       jkube.io/git-branch: master
-      jkube.io/scm-url: git@github.com:adityadand/spring-demo-webservices-ci-cd.git
-      jkube.io/scm-tag: v0.0.2
+      jkube.io/scm-url: git@github.com:adityadand/spring-boot-devops.git
+      jkube.io/scm-tag: v0.0.3
     labels:
       app: sprint-boot-devops
       provider: jkube
-      version: 0.0.2-SNAPSHOT
+      version: 0.0.3-SNAPSHOT
       group: sprint-boot-devops
     name: sprint-boot-devops
   spec:
@@ -57,15 +57,15 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/scm-url: git@github.com:adityadand/spring-demo-webservices-ci-cd.git
+          jkube.io/scm-url: git@github.com:adityadand/spring-boot-devops.git
           jkube.io/git-url: https://github.com/adityadand/spring-boot-devops.git
-          jkube.io/scm-tag: v0.0.2
-          jkube.io/git-commit: d8e7a6b7a84bb973c176570a82aad8a14573e546
+          jkube.io/scm-tag: v0.0.3
+          jkube.io/git-commit: 3f471c27047b5b5ec6d20086693a65b3eb61e37b
           jkube.io/git-branch: master
         labels:
           app: sprint-boot-devops
           provider: jkube
-          version: 0.0.2-SNAPSHOT
+          version: 0.0.3-SNAPSHOT
           group: sprint-boot-devops
       spec:
         containers:
@@ -97,10 +97,11 @@ items:
           imagePullPolicy: IfNotPresent
           name: spring-boot
           ports:
+          - containerPort: 8080
+            name: http
+            protocol: TCP
           - containerPort: 9779
             name: prometheus
-            protocol: TCP
-          - containerPort: 8090
             protocol: TCP
           - containerPort: 8778
             name: jolokia
