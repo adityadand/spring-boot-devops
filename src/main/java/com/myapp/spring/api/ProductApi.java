@@ -43,6 +43,12 @@ public ResponseEntity<List<Product>> findProductsByPrice(@PathVariable("price") 
 	return new ResponseEntity<>(repository.findByPriceGreaterThanEqual(price).get(),HttpStatus.OK);
 }
 
+//@GetMapping("/findByRating/{rating}")
+//public ResponseEntity<List<Product>> findProductsByStarRating(@PathVariable("rating") Double price){
+//	return new ResponseEntity<>(repository.findByPriceGreaterThanEqual(price).get(),HttpStatus.OK);
+//}
+
+
 @GetMapping("/findByPriceEq/{price}")
 public ResponseEntity<List<Product>> findProductsByPriceEq(@PathVariable("price") Double price){
 	return new ResponseEntity<>(repository.findByPrice(price).get(),HttpStatus.OK);
